@@ -49,4 +49,15 @@ $(document).ready(function(){
             scrollTop: destino.offset().top
         }, 1000)
     })
+
+    // Isso para Fazer a Rolagem da pagina com animação link nav
+    $('a[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this.hash);
+        if (target.length) {
+            $('html, body').animate({
+            scrollTop: target.offset().top
+            }, 1000);
+        }
+        });
 })
